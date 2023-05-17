@@ -4,66 +4,162 @@
       <title>Котикі - наші улюбленці</title>
       <meta charset="UTF-8">
       <style>
-          .navigation {
-              display: flex; 
-              justify-content: center; 
-              background-color: #632d01; 
-              padding: 10px; 
-          }
-        
-          .navigation a {
-              color: #000000; 
-              text-decoration: none;
-              padding: 10px 20px; 
-              margin: 0 10px; 
-              border-radius: 5px;
-              background-color: #8d8d8d; 
-          }
+        .navigation {
+          display: flex; 
+          justify-content: center; 
+          background-color: #860000; 
+          padding: 10px; 
+        }
       
-          .navigation a:hover {
-              background-color: #e2f34c; 
-          }
+        .navigation a {
+          color: #000000; 
+          text-decoration: none;
+          padding: 10px 20px; 
+          margin: 0 10px; 
+          border-radius: 5px;
+          background-color: #8d8d8d; 
+        }
+    
+        .navigation a:hover {
+          background-color: #e2f34c; 
+        }
 
-          body {
-              background-color: #ffeef2;
-              font-family: Arial, sans-serif;
-              color: #292929;
-          }
-          
-          h1 {
-              color: #000000;
-              text-align: center;
-          }
-          
-          table {
+        .navigation .home-link {
+          background-color: #ed61ff; /* Задаємо інший колір */
+        }
+        .navigation .home-link:hover {
+          background-color: #c421da; /* Задаємо інший колір */
+        }
+        
+
+        body {
+          background-color: #f5c0c0;
+          font-family: Arial, sans-serif;
+          font-size: larger;
+          color: #292929;
+        }
+        
+        h1 {
+          color: #000000;
+          text-align: center;
+        }
+
+        #about {
+          display: flex;
+          align-items: center;
+          margin-top: 20px; /* Відступ зверху */
+          margin-bottom: 20px; /* Відступ знизу */
+          margin-left: 5px; /* Відступ зліва */
+          margin-right: 5px; /* Відступ зправа */
+        }
+      
+        #about-text {
+          flex: 1;
+          padding-right: 20px;
+        }
+      
+        #about-image {
+          flex: 1;
+          max-width: 400px; /* Фіксована ширина */
+          cursor: pointer;
+        }
+        
+        table {
           border-collapse: collapse;
-          width: 50%;
-          }
+          
+        }
 
-          th, td {
+        th, td {
           padding: 8px;
           text-align: left;
           border: 1px solid #290075;
           background-color: #7bc0db;
-          }
+        }
 
-          th {
+        th {
           background-color: #00f078;
-          }
-          
+        }
         
+
+        /* Стилі для змісту */
+        nav ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+
+        }
+
+        nav li {
+          margin: 0 10px;
+        }
+
+        nav a {
+          display: block;
+          padding: 10px;
+          text-decoration: none;
+          color: #333;
+          background-color: #ff57be;
+        }
+
+        nav a:hover {
+          background-color: #f5007a;
+        }
+
+         /* Стилі для галереї */
+        .gallery {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          grid-gap: 10px; /* Додайте відступи між картинками, якщо потрібно */
+        }
+
+        .gallery img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          cursor: pointer;
+        }
+
+        /* Стилі для відкритої картинки */
+        .lightbox {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.8);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 999;
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.3s ease;
+        }
+
+        .lightbox img {
+          max-width: 90%;
+          max-height: 90%;
+        }
+
+        .lightbox.open {
+          opacity: 1;
+          pointer-events: auto;
+        }
+              
       </style>
     </head>
   <body>
     <header>
 
       <div class="navigation">
+        <a href="../golovna.html" class="home-link">Головна</a>
         <a href="cat.html">Котики</a>
         <a href="dog.html">Собачки</a>
       </div>
-      <header>
 
-      <h1>Котикі - наші улюбленці</h1>
+      <h1>Котики - наші улюбленці</h1>
       <nav>
         <ul>
           <li><a href="#about">Про котиків</a></li>
@@ -72,14 +168,23 @@
         </ul>
       </nav>
     </header>
+
+    
+
     <main>
+      <section id="about">
+        <div id="about-text">
+          <h2>Про котиків</h2>
+          <p>Котикі - це чудові тварини, які люблять дивитися у вікна, гратися з мишами, спати на вашій ковдрі та вивчати світ навколо себе. Вони можуть бути незалежними та граційними, або ж грайливими та ніжними. У кожного котика є свій характер та особливості, що робить їх особливими та унікальними. Вони просто безподібні! А ще коти дуже ласкові, якщо до них добре відноситися звіснож. Коти — найпопулярніші домашні тварини у людей, за ними йдуть собаки, а за собаками діти.</p>
+        </div>
+        <div id="about-image">
+          <img src="https://discover.in.ua/uploads/illustrations-2/chomu-njavkajut-koshenjata.jpg" alt="Котик"  width="100%" height="100%" onclick="openLightbox(this)">
+        </div>
+      </section>
+
       
-    <section id="about">
-        <h2>Про котиків</h2>
-        <p>Котикі - це чудові тварини, які люблять дивитися у вікна, гратися з мишами, спати на вашій ковдрі та вивчати світ навколо себе. Вони можуть бути незалежними та граційними, або ж грайливими та ніжними. У кожного котика є свій характер та особливості, що робить їх особливими та унікальними. Вони просто безподібні! А ще коти дуже ласкові, якщо до них добре відноситися звіснож. Коти — найпопулярніші домашні тварини у людей, за ними йдуть собаки, а за собаками діти.</p>
-    </section>
-      
-    <section id="breeds">
+        
+      <section id="breeds">
         <h2>Породи котиків</h2>
         <p>Існує безліч порід котиків, кожна з яких має свої особливості та характеристики. Деякі з найпопулярніших порід включають:</p>
         <ul>
@@ -89,74 +194,94 @@
           <li>Мейн-кун</li>
           <li>Шотландський викідняк</li>
         </ul>
+      </section>
 
-        <div>
-            <h2>Перелік крутостей котиків та їх оцінки:</h2>
-            <table class="my-table">
-              <tr>
-                <th>Крутість котика</th>
-                <th>Оцінка</th>
-              </tr>
-              <tr>
-                <td>Лінивий котик</td>
-                <td>4/10</td>
-              </tr>
-              <tr>
-                <td>Мастер в розгляданні вікон</td>
-                <td>9/10</td>
-              </tr>
-              <tr>
-                <td>Експерт у боротьбі зі спальнісінням</td>
-                <td>7/10</td>
-              </tr>
-              <tr>
-                <td>Майстер з розбивання ваз</td>
-                <td>8/10</td>
-              </tr>
-              <tr>
-                <td>Професійний гонщик</td>
-                <td>6/10</td>
-              </tr>
-              <tr>
-                <td>Технічний директор котопідприємства</td>
-                <td>10/10</td>
-              </tr>
-              <tr>
-                <td>Експерт з розкладання на полиці</td>
-                <td>8/10</td>
-              </tr>
-              <tr>
-                <td>Гарний ловець мишей</td>
-                <td>7/10</td>
-              </tr>
-              <tr>
-                <td>Інтернет зірка</td>
-                <td>9/10</td>
-              </tr>
-              <tr>
-                <td>Досвідчений високорівеньковий відпочиваючий</td>
-                <td>10/10</td>
-              </tr>
-              <tr>
-                <td>Експерт по скретчінгу меблів</td>
-                <td>8/10</td>
-              </tr>
-            </table>
-        </div>
-          
-          
-    </section>
+      <div>
+        <h2>Перелік крутостей котиків та їх оцінки:</h2>
+        <table class="my-table">
+          <tr>
+            <th>Крутість котика</th>
+            <th>Оцінка</th>
+          </tr>
+          <tr>
+            <td>Лінивий котик</td>
+            <td>4/10</td>
+          </tr>
+          <tr>
+            <td>Мастер в розгляданні вікон</td>
+            <td>9/10</td>
+          </tr>
+          <tr>
+            <td>Експерт у боротьбі зі спальнісінням</td>
+            <td>7/10</td>
+          </tr>
+          <tr>
+            <td>Майстер з розбивання ваз</td>
+            <td>8/10</td>
+          </tr>
+          <tr>
+            <td>Професійний гонщик</td>
+            <td>6/10</td>
+          </tr>
+          <tr>
+            <td>Технічний директор котопідприємства</td>
+            <td>10/10</td>
+          </tr>
+          <tr>
+            <td>Експерт з розкладання на полиці</td>
+            <td>8/10</td>
+          </tr>
+          <tr>
+            <td>Гарний ловець мишей</td>
+            <td>7/10</td>
+          </tr>
+          <tr>
+            <td>Інтернет зірка</td>
+            <td>9/10</td>
+          </tr>
+          <tr>
+            <td>Досвідчений високорівеньковий відпочиваючий</td>
+            <td>10/10</td>
+          </tr>
+          <tr>
+            <td>Експерт по скретчінгу меблів</td>
+            <td>8/10</td>
+          </tr>
+        </table>
+      </div>
+        
+      <section id="gallery">
+          <h2>Галерея</h2>
+          <p>Ось кілька чудових фотографій котиків:</p>
+          <div class="gallery">
+            <img src="https://img.tsn.ua/cached/814/tsn-e7757395fe937525edc97f670924f9cf/thumbs/608xX/37/1e/83aa84171aedc33fae0480d37a3d1e37.jpg" alt="Котик 1" onclick="openLightbox(this)">
+            <img src="https://img.tsn.ua/cached/884/tsn-e7757395fe937525edc97f670924f9cf/thumbs/608xX/74/b0/8a6ba4c1063aa69248c75db329deb074.jpg" alt="Котик 2" onclick="openLightbox(this)">
+            <img src="https://img.tsn.ua/cached/827/tsn-e7757395fe937525edc97f670924f9cf/thumbs/608xX/1a/eb/781e593156c50a607d975cfa759aeb1a.jpg" alt="Котик 3" onclick="openLightbox(this)">
+          </div>
+
+          <div class="lightbox" onclick="closeLightbox(event)">
+            <img id="lightboxImage" src="" alt="Відкрита картинка">
+          </div>
+        
+      </section>
+
+      <script>
+        function openLightbox(image) {
+          var lightbox = document.querySelector('.lightbox');
+          var lightboxImage = document.getElementById('lightboxImage');
       
-    <section id="gallery">
-        <h2>Галерея</h2>
-        <p>Ось кілька чудових фотографій котиків:</p>
-        <div class="gallery">
-          <img src="https://img.tsn.ua/cached/814/tsn-e7757395fe937525edc97f670924f9cf/thumbs/608xX/37/1e/83aa84171aedc33fae0480d37a3d1e37.jpg" alt="Котик 1">
-          <img src="https://img.tsn.ua/cached/884/tsn-e7757395fe937525edc97f670924f9cf/thumbs/608xX/74/b0/8a6ba4c1063aa69248c75db329deb074.jpg" alt="Котик 2">
-          <img src="https://img.tsn.ua/cached/827/tsn-e7757395fe937525edc97f670924f9cf/thumbs/608xX/1a/eb/781e593156c50a607d975cfa759aeb1a.jpg" alt="Котик 3">
-        </div>
+          lightboxImage.src = image.src;
+          lightbox.classList.add('open');
+        }
       
-    </section>
+        function closeLightbox(event) {
+          if (event.target.classList.contains('lightbox')) {
+            var lightbox = document.querySelector('.lightbox');
+            lightbox.classList.remove('open');
+          }
+        }
+      </script>
+
     </main>
   </body>
 </html>
