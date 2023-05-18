@@ -4,42 +4,213 @@
 	<title>Головна</title>
 	<meta charset="UTF-8">
 	<style>
-		.container {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			height: 100vh;
+
+		body{
+			margin: 0px;
+		}
+		
+		main{
+			margin: 10px;
 		}
 
-		h1 {
-            color: #000000;
-            text-align: center;
+		.hero-section {
+		position: relative;
+		width: 100%;
+		height: 60vh;
+		overflow: hidden;
 		}
 
-		.link {
-			display: inline-block;
-			margin: 0 10px;
-			padding: 10px 20px;
-			background-color: #4CAF50;
-			color: #fff;
-			text-decoration: none;
-			border-radius: 5px;
-			font-size: 20px;
-			font-weight: bold;
-			text-align: center;
-			transition: background-color 0.3s;
+		.hero-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 		}
 
-		.link:hover {
-			background-color: #3e8e41;
+		.hero-overlay {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%; /* Затемнена область - ви можете налаштувати розмір */
+		height: 40%; /* Затемнена область - ви можете налаштувати розмір */
+		background: linear-gradient(
+			rgba(0, 0, 0, 0.01),
+			rgba(0, 0, 0, 0.8), 40%,
+			rgba(0, 0, 0, 0.8), 90%,
+			rgba(0, 0, 0, 0.01)
+		);
+	
+		}
+
+		.hero-content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		color: #ffffff;
+		}
+
+		.hero-content h1 {
+		font-size: 32px;
+		margin-bottom: 20px;
+		}
+
+		.hero-content p {
+		font-size: 18px;
+		}
+
+		/* Стилі секції сітки */
+
+		.grid-section {	
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			grid-auto-rows: 400px;
+			grid-gap: 20px;
+		}
+
+		.grid-item {
+		position: relative;
+		width: 300px;
+		height: 400px;
+		}
+
+		.grid-link {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		text-decoration: none;
+		background-color: #f0f0f0;
+		overflow: hidden;
+		transition: transform 0.3s ease;
+		}
+
+		.grid-link:hover {
+		transform: scale(1.05);
+		}
+
+		.grid-image-container {
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		}
+
+		.grid-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		}
+
+		.grid-caption {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		padding: 10px;
+		background-color: rgba(0, 0, 0, 0.45);
+		backdrop-filter: blur(5px);
+		color: #fff;
+		font-size: 14px;
 		}
 	</style>
 </head>
 <body>
-	<h1>Котикі, Собаки та інші</h1>
-	<div class="container">
-		<a href="animals/cat.html" class="link">Коти</a>
-		<a href="animals/dog.html" class="link">Собаки</a>
-	</div>
+	<header>
+		<div class="hero-section">
+			<img src="cute.jpg" alt="Hero Image" class="hero-image">
+			<div class="hero-overlay"></div>
+			<div class="hero-content">
+			  <h1>Домашні улюбленці</h1>
+			</div>
+		</div>
+
+	</header>
+
+	<main>
+		<section class="grid-section">
+			<div class="grid-item">
+			  <a href="animals/cat.html" class="grid-link">
+				<div class="grid-image-container">
+				  <img src="https://klike.net/uploads/posts/2022-06/1654842544_1.jpg" alt="Image 1" class="grid-image">
+				</div>
+				<span class="grid-caption">
+					<h2>Котики</h2>
+					Це такі милі-милі створіння, їх треба любити
+				</span>
+			  </a>
+			</div>
+
+			<div class="grid-item">
+			  <a href="animals/dog.html" class="grid-link">
+				<div class="grid-image-container">
+				  <img src="https://klike.net/uploads/posts/2022-08/1661698411_j-5.jpg" alt="Image 2" class="grid-image">
+				</div>
+				<span class="grid-caption">
+					<h2>Собачки</h2>
+					Вони виростають великими, але вони дуже хороші
+				</span>
+			  </a>
+			</div>
+
+			<div class="grid-item">
+				<a href="page2.html" class="grid-link">
+				  <div class="grid-image-container">
+					<img src="https://klike.net/uploads/posts/2022-06/1654842597_3.jpg" alt="Image 2" class="grid-image">
+				  </div>
+				  <span class="grid-caption">Caption 2</span>
+				</a>
+			  </div>
+
+			  <div class="grid-item">
+				<a href="page2.html" class="grid-link">
+				  <div class="grid-image-container">
+					<img src="https://klike.net/uploads/posts/2022-06/1654842644_4.jpg" alt="Image 2" class="grid-image">
+				  </div>
+				  <span class="grid-caption">Caption 2</span>
+				</a>
+			  </div>
+
+			  <div class="grid-item">
+				<a href="page2.html" class="grid-link">
+				  <div class="grid-image-container">
+					<img src="https://klike.net/uploads/posts/2022-06/1654842566_5.jpg" alt="Image 2" class="grid-image">
+				  </div>
+				  <span class="grid-caption">Caption 2</span>
+				</a>
+			  </div>
+
+			  <div class="grid-item">
+				<a href="page2.html" class="grid-link">
+				  <div class="grid-image-container">
+					<img src="https://klike.net/uploads/posts/2022-06/1654842586_6.jpg" alt="Image 2" class="grid-image">
+				  </div>
+				  <span class="grid-caption">Caption 2</span>
+				</a>
+			  </div>
+
+			  <div class="grid-item">
+				<a href="page2.html" class="grid-link">
+				  <div class="grid-image-container">
+					<img src="https://klike.net/uploads/posts/2022-06/1654842616_7.jpg" alt="Image 2" class="grid-image">
+				  </div>
+				  <span class="grid-caption">Caption 2</span>
+				</a>
+			  </div>
+
+			  <div class="grid-item">
+				<a href="page2.html" class="grid-link">
+				  <div class="grid-image-container">
+					<img src="https://klike.net/uploads/posts/2022-06/1654842573_8.jpg" alt="Image 2" class="grid-image">
+				  </div>
+				  <span class="grid-caption">Caption 2</span>
+				</a>
+			  </div>
+			<!-- Додайте більше блоків за потребою -->
+		</section>
+		  
+	</main>
 </body>
 </html>

@@ -37,8 +37,13 @@
           font-family: Arial, sans-serif;
           font-size: larger;
           color: #292929;
+          margin: 0px;
         }
         
+        section {
+          margin: 25px;
+        }
+
         h1 {
           color: #000000;
           text-align: center;
@@ -47,10 +52,6 @@
         #about {
           display: flex;
           align-items: center;
-          margin-top: 20px; /* Відступ зверху */
-          margin-bottom: 20px; /* Відступ знизу */
-          margin-left: 5px; /* Відступ зліва */
-          margin-right: 5px; /* Відступ зправа */
         }
       
         #about-text {
@@ -147,6 +148,13 @@
           opacity: 1;
           pointer-events: auto;
         }
+
+        @media screen and (orientation: portrait) {
+          #about {
+            display: block;
+            align-items: center;
+          }
+        }
               
       </style>
     </head>
@@ -196,7 +204,7 @@
         </ul>
       </section>
 
-      <div>
+      <section>
         <h2>Перелік крутостей котиків та їх оцінки:</h2>
         <table class="my-table">
           <tr>
@@ -248,7 +256,7 @@
             <td>8/10</td>
           </tr>
         </table>
-      </div>
+      </section>
         
       <section id="gallery">
           <h2>Галерея</h2>
@@ -265,7 +273,7 @@
         
       </section>
 
-      <script>
+      <script async>
         function openLightbox(image) {
           var lightbox = document.querySelector('.lightbox');
           var lightboxImage = document.getElementById('lightboxImage');
