@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Хом'яки маленькі та милі</title>
+      <meta charset="UTF-8">
+      <style>
+        .navigation {
+          display: flex; 
+          justify-content: center; 
+          background-color: #860000; 
+          padding: 10px; 
+        }
+      
+        .navigation a {
+          color: #000000; 
+          text-decoration: none;
+          padding: 10px 20px; 
+          margin: 0 10px; 
+          border-radius: 5px;
+          background-color: #ff3cbe; 
+        }
+    
+        .navigation a:hover {
+          background-color: #ff009d; 
+        }
+
+        .navigation .home-link {
+          background-color: #ff00b3; /* Задаємо інший колір */
+        }
+        .navigation .home-link:hover {
+          background-color: #e0005d; /* Задаємо інший колір */
+        }
+        
+
+        body {
+          background-color: #f5c0c0;
+          font-family: Arial, sans-serif;
+          font-size: larger;
+          color: #292929;
+          margin: 0px;
+        }
+        
+        section {
+          margin: 25px;
+        }
+
+        h1 {
+          color: #000000;
+          text-align: center;
+        }
+
+        #about {
+          display: flex;
+          align-items: center;
+        }
+      
+        #about-text {
+          flex: 1;
+          padding-right: 20px;
+        }
+      
+        #about-image {
+          flex: 1;
+          max-width: 400px; /* Фіксована ширина */
+          cursor: pointer;
+        }
+        
+        table {
+          border-collapse: collapse;
+          
+        }
+
+        th, td {
+          padding: 8px;
+          text-align: left;
+          border: 1px solid #290075;
+          background-color: #7bc0db;
+        }
+
+        th {
+          background-color: #00f078;
+        }
+        
+
+        /* Стилі для змісту */
+        nav ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+
+        }
+
+        nav li {
+          margin: 0 10px;
+        }
+
+        nav a {
+          display: block;
+          padding: 10px;
+          text-decoration: none;
+          color: #333;
+          background-color: #ff57be;
+        }
+
+        nav a:hover {
+          background-color: #f5007a;
+        }
+
+         /* Стилі для галереї */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-auto-rows: 300px;
+            grid-gap: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        /* Стилі для відкритої картинки */
+        .lightbox {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.8);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 999;
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.3s ease;
+        }
+
+        .lightbox img {
+          max-width: 90%;
+          max-height: 90%;
+        }
+
+        .lightbox.open {
+          opacity: 1;
+          pointer-events: auto;
+        }
+
+        @media screen and (orientation: portrait) {
+          #about {
+            display: block;
+            align-items: center;
+          }
+        }
+              
+      </style>
+    </head>
+  <body>
+    <header>
+
+      <div class="navigation">
+        <a href="../golovna.html" class="home-link">Головна</a>
+        <a href="cat.html">Котики</a>
+        <a href="dog.html">Собачки</a>
+        <a href="croli.html">Кролі</a>
+        <a href="hamster.html">Хом'яки</a>
+      </div>
+
+      <h1>Хом'яки маленькі та милі</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">Про хом'ячків</a></li>
+          <li><a href="#breeds">Види хом'яків</a></li>
+          <li><a href="#gallery">Галерея</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    
+
+    <main>
+      <section id="about">
+        <div id="about-text">
+          <h2>Про хом'ячків</h2>
+          <p>Хом'ячки - це милі і пухнасті тваринки, які можуть стати чудовими друзями для людей. Це гризуни, які належать до родини хом'якових і мають багато різних видів. Найпопулярнішими серед домашніх хом'ячків є джунгарський, сирійський, хом'як Роборовського і Кемпбелла. Вони відрізняються за розміром, забарвленням, характером і умовами утримання.</p>
+          <p>Хом'ячки мають короткі кінцівки, невеликі вуха і довгі різці, які ростуть протягом всього життя. У них є ще одна особливість - защічні мішки, якими вони транспортують їжу до своєї нори. Хом'ячки люблять запасатися провізією і ховати її в різних місцях. Також вони дуже охайні і не люблять бруду.</p>
+          <p>Хом'ячки - це нічні тварини, які активні в темний час доби. Вони сплять вдень у своїх будиночках або норах. Вони не дуже товариські і можуть сваритися з іншими хом'ячками за територію або їжу. Тому краще тримати їх окремо або в парах однакової статі.</p>
+          <p>Хом'ячки - це цікава інформація для тих, хто любить маленьких тварин. Вони мають багато переваг: вони маленькі, невимогливі, прості в догляді і не потребують багато місця. Але вони також потребують уваги, любові і поваги. Якщо ви заведете собі хом'ячка, то отримаєте не тільки пухнастого друга, але й багато цікавих спостережень за його життям.</p>
+        </div>
+        <div id="about-image">
+          <img src="https://klike.net/uploads/posts/2021-04/1618560642_24.jpg" alt="Хом'як"  width="100%" height="100%" onclick="openLightbox(this)">
+        </div>
+      </section>
+
+      <section id="breeds">
+        <h2>Види хом'яків</h2>
+        <p>Ось деякі види домашніх хом'яків</p>
+        <ul>
+            <li>Сирійський хом'як</li>
+            <li>Російський хом'як</li>
+            <li>Камбоджійський хом'як</li>
+            <li>Китайський хом'як</li>
+            <li>Джунгарський хом'як</li>
+            <li>Роборовскій хом'як</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Перелік крутостей хом'ячків:</h2>
+        <table>
+            <tr>
+              <th>Крутість хом'яка</th>
+              <th>Особливі навички</th>
+              <th>Оцінка</th>
+            </tr>
+            <tr>
+              <td>Хом'як-екстремал</td>
+              <td>Виконує сміливі трюки на колесі</td>
+              <td>9/10</td>
+            </tr>
+            <tr>
+              <td>Хом'як-акробат</td>
+              <td>Проводить акробатичні вистави на драбинці</td>
+              <td>8/10</td>
+            </tr>
+            <tr>
+              <td>Хом'як-шпигун</td>
+              <td>Вміє розблоковувати клітки та вибирати замки</td>
+              <td>7/10</td>
+            </tr>
+            <tr>
+              <td>Хом'як-перегони</td>
+              <td>Бере участь у забігах на маленьких автомобілях</td>
+              <td>8/10</td>
+            </tr>
+            <tr>
+              <td>Хом'як-викрадач</td>
+              <td>Майстерно краде маленькі скарби та сховки</td>
+              <td>6/10</td>
+            </tr>
+            <tr>
+              <td>Хом'як-жартівник</td>
+              <td>Робить смішні жартівливі позиції та фокуси</td>
+              <td>9/10</td>
+            </tr>
+          </table>
+      </section>
+        
+      <section id="gallery">
+          <h2>Галерея</h2>
+          <p>Ось кілька чудових фотографій кроликів:</p>
+          <div class="gallery">
+            <img src="https://klike.net/uploads/posts/2022-09/1662099831_j-50.jpg" alt="Хом'як 1" onclick="openLightbox(this)">
+            <img src="https://klike.net/uploads/posts/2022-09/1662099851_j-49.jpg" alt="Хом'як 2" onclick="openLightbox(this)">
+            <img src="https://klike.net/uploads/posts/2022-09/1662099806_j-48.jpg" alt="Хом'як 3" onclick="openLightbox(this)">
+            <img src="https://klike.net/uploads/posts/2022-09/1662099802_j-47.jpg" alt="Хом'як 4" onclick="openLightbox(this)">
+            <img src="https://klike.net/uploads/posts/2022-09/1662099833_j-45.jpg" alt="Хом'як 5" onclick="openLightbox(this)">
+            <img src="https://klike.net/uploads/posts/2022-09/1662099827_j-44.jpg" alt="Хом'як 6" onclick="openLightbox(this)">
+            <img src="https://klike.net/uploads/posts/2022-09/1662099758_j-43.jpg" alt="Хом'як 7" onclick="openLightbox(this)">
+            <img src="https://klike.net/uploads/posts/2022-09/1662099794_j-30.jpg" alt="Хом'як 8" onclick="openLightbox(this)">
+            <img src="https://klike.net/uploads/posts/2022-09/1662099839_j-29.jpg" alt="Хом'як 9" onclick="openLightbox(this)">
+          </div>
+
+          <div class="lightbox" onclick="closeLightbox(event)">
+            <img id="lightboxImage" src="" alt="Відкрита картинка">
+          </div>
+        
+      </section>
+
+      <script async>
+        function openLightbox(image) {
+          var lightbox = document.querySelector('.lightbox');
+          var lightboxImage = document.getElementById('lightboxImage');
+      
+          lightboxImage.src = image.src;
+          lightbox.classList.add('open');
+        }
+      
+        function closeLightbox(event) {
+          if (event.target.classList.contains('lightbox')) {
+            var lightbox = document.querySelector('.lightbox');
+            lightbox.classList.remove('open');
+          }
+        }
+      </script>
+
+    </main>
+  </body>
+</html>

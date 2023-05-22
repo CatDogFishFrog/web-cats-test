@@ -1,103 +1,223 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>собачки :3</title>
-		<meta charset="UTF-8">
-		<style>
+    <head>
+      <title>Собачки дуже дружні</title>
+      <meta charset="UTF-8">
+      <style>
+        .navigation {
+          display: flex; 
+          justify-content: center; 
+          background-color: #860000; 
+          padding: 10px; 
+        }
+      
+        .navigation a {
+          color: #000000; 
+          text-decoration: none;
+          padding: 10px 20px; 
+          margin: 0 10px; 
+          border-radius: 5px;
+          background-color: #ff3cbe; 
+        }
+    
+        .navigation a:hover {
+          background-color: #ff009d; 
+        }
 
-			.navigation {
-				display: flex; 
-				justify-content: center; 
-				background-color: #632d01; 
-				padding: 10px; 
-			}
+        .navigation .home-link {
+          background-color: #ff00b3; /* Задаємо інший колір */
+        }
+        .navigation .home-link:hover {
+          background-color: #e0005d; /* Задаємо інший колір */
+        }
+        
 
-			.navigation a {
-				color: #000000; 
-				text-decoration: none;
-				padding: 10px 20px; 
-				margin: 0 10px; 
-				border-radius: 5px;
-				background-color: #8d8d8d; 
-			}
-			
-			.navigation a:hover {
-				background-color: #e2f34c; 
-			}
-			body {
-				background-color: #F5F5F5;
-				color: #333333;
-				font-family: Arial, sans-serif;
-				margin: 0;
-				padding: 0;
-			}
+        body {
+          background-color: #f5c0c0;
+          font-family: Arial, sans-serif;
+          font-size: larger;
+          color: #292929;
+          margin: 0px;
+        }
+        
+        section {
+          margin: 25px;
+        }
 
-			header {
-				background-color: #0099CC;
-				color: #FFFFFF;
-				padding: 20px;
-				text-align: center;
-			}
+        h1 {
+          color: #000000;
+          text-align: center;
+        }
 
-			h1 {
-				font-size: 48px;
-				margin: 0;
-				padding: 0;
-			}
+        #about {
+          display: flex;
+          align-items: center;
+        }
+      
+        #about-text {
+          flex: 1;
+          padding-right: 20px;
+        }
+      
+        #about-image {
+          flex: 1;
+          max-width: 400px; /* Фіксована ширина */
+          cursor: pointer;
+        }
+        
+        table {
+          border-collapse: collapse;
+          
+        }
 
-			main {
-				margin: 20px auto;
-				max-width: 800px;
-				padding: 20px;
-			}
+        th, td {
+          padding: 8px;
+          text-align: left;
+          border: 1px solid #290075;
+          background-color: #7bc0db;
+        }
 
-			table {
-				border-collapse: collapse;
-				width: 100%;
-			}
+        th {
+          background-color: #00f078;
+        }
+        
 
-			th, td {
-				border: 1px solid #333333;
-				padding: 10px;
-				text-align: center;
-			}
+        /* Стилі для змісту */
+        nav ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
 
-			th {
-				background-color: #333333;
-				color: #FFFFFF;
-			}
+        }
 
-			tr:nth-child(even) {
-				background-color: #F5F5F5;
-			}
+        nav li {
+          margin: 0 10px;
+        }
 
-			tr:nth-child(odd) {
-				background-color: #CCCCCC;
-			}
-		</style>
-	</head>
-<body>
-	<div class="navigation">
-		<a href="cat.html">Котики</a>
-		<a href="dog.html">Собачки</a>
-	</div>
-	<header>
-		<h1>Собачки :3</h1>
-	</header>
-	
-	<h1>Собачки - найкращі друзі людини</h1>
-	<p>Люди часто говорять -- "Собака -- найкращий друг людини" і в чомусь вони мають рацію.</p>
-	<p>Собачки — це чудові тварини, які можуть бути й друзями, і захисниками. Ось деякі цікаві факти про них:</p>
-	<ul>
-		<li>Собачки мають власний відбиток носа, який є унікальним, як відбиток пальця у людини.</li>
-		<li>Собачки можуть розуміти до 250 слів і жестів, що робить їх найрозумнішими тваринами після людей і шимпанзе.</li>
-		<li>Собачки можуть бути різних розмірів: від дрібних чихуахуа, які важать менше кілограма, до велетенських англійських мастифів, які можуть важити до 90 кг.</li>
-		<li>Собачки можуть бути дуже кумедними: вони люблять гратися з іграшками, робити смішні звуки та позувати для фото. Деякі собачки навчилися навіть робити трюки, такі як перекидатися через перешкоди або грати на піаніно.</li>
-		<li>Собачки можуть бути також дуже хоробрими й відданими: вони готові захищати своїх господарів від небезпеки, навіть якщо це означає ризик для їхнього життя. Деякі собачки працюють на службі у поліції, армії або рятувальних службах.</li>
-	</ul>
-	
-	<main>
-		<table>
+        nav a {
+          display: block;
+          padding: 10px;
+          text-decoration: none;
+          color: #333;
+          background-color: #ff57be;
+        }
+
+        nav a:hover {
+          background-color: #f5007a;
+        }
+
+         /* Стилі для галереї */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-auto-rows: 300px;
+            grid-gap: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        /* Стилі для відкритої картинки */
+        .lightbox {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.8);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 999;
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.3s ease;
+        }
+
+        .lightbox img {
+          max-width: 90%;
+          max-height: 90%;
+        }
+
+        .lightbox.open {
+          opacity: 1;
+          pointer-events: auto;
+        }
+
+        @media screen and (orientation: portrait) {
+          #about {
+            display: block;
+            align-items: center;
+          }
+        }
+              
+      </style>
+    </head>
+  <body>
+    <header>
+
+      <div class="navigation">
+        <a href="../golovna.html" class="home-link">Головна</a>
+        <a href="cat.html">Котики</a>
+        <a href="dog.html">Собачки</a>
+        <a href="croli.html">Кролі</a>
+        <a href="hamster.html">Хом'яки</a>
+      </div>
+
+      <h1>Собачки:3</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">Про собачок</a></li>
+          <li><a href="#breeds">Породи собак</a></li>
+          <li><a href="#gallery">Галерея</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    
+
+    <main>
+      <section id="about">
+        <div id="about-text">
+          <h2>Про собачок</h2>
+          <p>Люди часто говорять -- "Собака -- найкращий друг людини" і в чомусь вони мають рацію.</p>
+          <p>Собачки — це чудові тварини, які можуть бути й друзями, і захисниками. Ось деякі цікаві факти про них:</p>
+          <ul>
+              <li>Собачки мають власний відбиток носа, який є унікальним, як відбиток пальця у людини.</li>
+              <li>Собачки можуть розуміти до 250 слів і жестів, що робить їх найрозумнішими тваринами після людей і шимпанзе.</li>
+              <li>Собачки можуть бути різних розмірів: від дрібних чихуахуа, які важать менше кілограма, до велетенських англійських мастифів, які можуть важити до 90 кг.</li>
+              <li>Собачки можуть бути дуже кумедними: вони люблять гратися з іграшками, робити смішні звуки та позувати для фото. Деякі собачки навчилися навіть робити трюки, такі як перекидатися через перешкоди або грати на піаніно.</li>
+              <li>Собачки можуть бути також дуже хоробрими й відданими: вони готові захищати своїх господарів від небезпеки, навіть якщо це означає ризик для їхнього життя. Деякі собачки працюють на службі у поліції, армії або рятувальних службах.</li>
+          </ul>
+        </div>
+        <div id="about-image">
+          <img src="https://petsi.net/images/dogbreed/big/56.jpg" alt="Собаки"  width="100%" height="100%" onclick="openLightbox(this)">
+        </div>
+      </section>
+
+      
+        
+      <section id="breeds">
+        <h2>Породи собак</h2>
+        <p>Існує багато порід собак, частіш за все їх поділяють на службовіх та домашніх пухнастиків. Логычно що маленька чихуахуа годиться ліше як домашній пухнастик, який не людину врятувати не сможе, не дом охороняти, а от німецька вівчарка може і людіну з під завалу витягти, і вора відпугнути (а якщо не піде то може навіть насмерть загристи). Ще існують такі породи собак:</p>
+        <ul>
+          <li>Підюуль</li>
+          <li>Доберман</li>
+          <li>Шпиць</li>
+          <li>Німецка вівчарка</li>
+          <li>Чіхуахуа</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Перелік крутостей собак та їх оцінки:</h2>
+        <table>
 			<tr>
 				<th>Крутість</th>
 				<th>Оцінка</th>
@@ -127,22 +247,45 @@
 				<td>7/10</td>
 			</tr>
 		</table>
+        
+      <section id="gallery">
+          <h2>Галерея</h2>
+          <p>Ось кілька чудових фотографій собак:</p>
+          <div class="gallery">
+            <img src="https://bipbap.ru/wp-content/uploads/2021/06/bernskiy-szenehauer.jpg" alt="Собачки 1" onclick="openLightbox(this)">
+            <img src="https://bipbap.ru/wp-content/uploads/2021/06/akitaina.jpg" alt="Собаки"  width="100%" height="100%" onclick="openLightbox(this)">
+            <img src="https://bipbap.ru/wp-content/uploads/2021/06/zolotistiy-retviller.jpg" alt="Собаки"  width="100%" height="100%" onclick="openLightbox(this)">
+            <img src="https://bipbap.ru/wp-content/uploads/2021/06/sibirskaya-haska.jpg" alt="Собаки"  width="100%" height="100%" onclick="openLightbox(this)">
+            <img src="https://bipbap.ru/wp-content/uploads/2021/06/Screen-Shot-2021-03-12-at-1.14.09-PM.png" alt="Собаки"  width="100%" height="100%" onclick="openLightbox(this)">
+            <img src="https://bipbap.ru/wp-content/uploads/2021/06/Screen-Shot-2021-03-12-at-1.02.49-PM.png" alt="Собаки"  width="100%" height="100%" onclick="openLightbox(this)">
+            <img src="https://bipbap.ru/wp-content/uploads/2021/06/Screen-Shot-2021-03-12-at-8.43.39-AM.png" alt="Собаки"  width="100%" height="100%" onclick="openLightbox(this)">
+            <img src="https://bipbap.ru/wp-content/uploads/2021/06/Screen-Shot-2020-12-24-at-2.11.25-PM.png" alt="Собаки"  width="100%" height="100%" onclick="openLightbox(this)">
+            <img src="https://bipbap.ru/wp-content/uploads/2021/06/angl-koker-spaniel-14-730x453.jpg" alt="Собаки"  width="100%" height="100%" onclick="openLightbox(this)">
+          </div>
 
-		<section>
-			<h2>Галерея</h2>
-			<p>Ось кілька фотографій собачок:</p>
-			<div class="gallery">
-			  <img src="https://ichef.bbci.co.uk/news/800/cpsprodpb/475B/production/_98776281_gettyimages-521697453.jpg" alt="собаки 1">
-			  <img src="https://sobakovod.club/uploads/posts/2021-12/1639009832_25-sobakovod-club-p-sobaki-nebolshie-ovcharki-porodi-25.jpg" alt="собаки 2">
-			  <img src="https://content.e-zoo.com.ua/img/uploads/blog/statya_2156.jpg" alt="собаки 3">
-			</div>
-		  
-		</section>
+          <div class="lightbox" onclick="closeLightbox(event)">
+            <img id="lightboxImage" src="" alt="Відкрита картинка">
+          </div>
+        
+      </section>
 
-	</main>
-	<footer>
-		<p>© мій сайт про тварин</p>
-	</footer>
-</body>
+      <script async>
+        function openLightbox(image) {
+          var lightbox = document.querySelector('.lightbox');
+          var lightboxImage = document.getElementById('lightboxImage');
+      
+          lightboxImage.src = image.src;
+          lightbox.classList.add('open');
+        }
+      
+        function closeLightbox(event) {
+          if (event.target.classList.contains('lightbox')) {
+            var lightbox = document.querySelector('.lightbox');
+            lightbox.classList.remove('open');
+          }
+        }
+      </script>
 
+    </main>
+  </body>
 </html>
